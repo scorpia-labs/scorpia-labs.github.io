@@ -1,12 +1,9 @@
 name: directory-listing
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
   pages-directory-listing:
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-2604
     name: GH Pages by Directory Listing
     steps:
       - name: Checkout Repository
@@ -36,7 +33,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     # Specify runner + deployment step
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
